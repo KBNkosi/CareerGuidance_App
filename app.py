@@ -34,7 +34,11 @@ app = Flask(__name__)
 CORS(app, 
     resources={
         r"/*": {
-            "origins": ["http://localhost:3000", "http://127.0.0.1:3000"],
+            "origins": [
+                "http://localhost:3000",
+                "http://127.0.0.1:3000",
+                "https://career-guidance-app.netlify.app"
+            ],
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
             "allow_headers": ["Content-Type", "Authorization"],
             "supports_credentials": True,
@@ -846,5 +850,7 @@ if __name__ == "__main__":
         except Exception as e:
             logger.error(f"Error during initialization: {str(e)}")
 
-    # Start the app
-    app.run(debug=True)
+    # Get port from environment variable or default to 5000
+    port = int(os.environ.get("PORT", 5000))
+    # Start the app, binding to all network interfaces
+    app.run(host='0.0.0.0', port=port, debug=True)
