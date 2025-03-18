@@ -1,9 +1,9 @@
 import pandas as pd
 import math
-from sklearn import logger
+import logging
+logger = logging.getLogger(__name__)
 from models import User, BehavioralAssessment, ReferenceProfile
 import joblib
-import logging
 from ml.feature_engineering import create_derived_features, calculate_skill_match
 
 # recommendation.py
@@ -67,8 +67,15 @@ def career_recommendation(user_id):
             logger.warning(f"No profile found for user {user_id}")
             return None, 0
             
-        # Read the career data
-        df = pd.read_csv('data/career_recommendation_with_courses.csv')
+        # Read the career data with absolute path
+        import os
+        data_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'career_recommendation_with_courses.csv')
+        
+        if not os.path.exists(data_file_path):
+            logger.error(f"Career recommendation data file not found at {data_file_path}")
+            return None, 0
+            
+        df = pd.read_csv(data_file_path)
         
         # Calculate skills match for each career
         user_skills = set(user.skills.split(", ")) if user.skills else set()

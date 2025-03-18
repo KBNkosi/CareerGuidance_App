@@ -1,7 +1,7 @@
 from flask import Config, Flask, jsonify, request, send_file, render_template_string
 from flask_cors import CORS
 import pandas as pd
-from extensions import db, cors
+from extensions import db
 import init_data
 from models import User, BehavioralAssessment, ReferenceProfile, Course, University
 from recommendation import career_recommendation, calculate_reference_profile
@@ -30,15 +30,17 @@ logger = logging.getLogger(__name__)
 # Initialize Flask app
 app = Flask(__name__)
 
-# Configure CORS
-cors = CORS(app, 
-    resources={r"/*": {
-        "origins": ["http://localhost:3000"],
-        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"],
-        "supports_credentials": True
-    }},
-    supports_credentials=True
+# Configure CORS with more permissive settings for development
+CORS(app, 
+    resources={
+        r"/*": {
+            "origins": ["http://localhost:3000", "http://127.0.0.1:3000"],
+            "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+            "allow_headers": ["Content-Type", "Authorization"],
+            "supports_credentials": True,
+            "expose_headers": ["Content-Range", "X-Content-Range"]
+        }
+    }
 )
 
 # Configuration
@@ -191,27 +193,17 @@ def token_required(f):
         return f(current_user, *args, **kwargs)
     return decorated
 
-# Database initialization
-def init_db():
-    with app.app_context():
-        try:
-            db.create_all()
-            logger.info("Database tables created successfully")
-        except Exception as e:
-            logger.error(f"Error creating database tables: {str(e)}")
-            logger.error(traceback.format_exc())
-
-init_db()
-
 # Authentication routes
 @app.route('/signup', methods=['POST', 'OPTIONS'])
 def signup():
     if request.method == 'OPTIONS':
-        response= jsonify({"message": "Preflight request successful"})
-        response.headers.add("Access-Control-Allow-Origin", "http://localhost:3000")
-        response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
-        response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
-        response.headers.add("Access-Control-Allow-Credentials", "true")
+        # Handle preflight request with proper CORS headers
+        response = jsonify({"message": "Preflight request successful"})
+        response.headers.add('Access-Control-Allow-Origin', request.headers.get('Origin', 'http://localhost:3000'))
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+        response.headers.add('Access-Control-Allow-Methods', 'POST, OPTIONS')
+        response.headers.add('Access-Control-Allow-Credentials', 'true')
+        response.headers.add('Access-Control-Max-Age', '3600')  # Cache preflight response for 1 hour
         return response, 200
         
     try:
@@ -223,61 +215,84 @@ def signup():
         required_fields = ['firstName', 'lastName', 'email', 'age', 'careerInterests', 'password']
         if not all(field in data for field in required_fields):
             logger.error("Missing required fields")
-            return jsonify({"error": "Required fields are missing"}), 400
+            return jsonify({"error": "Missing required fields"}), 400
 
-        try:
-            hashed_password = bcrypt.hashpw(data['password'].encode('utf-8'), bcrypt.gensalt())
-            
-            new_user = User(
-                first_name=data['firstName'],
-                last_name=data['lastName'],
-                email=data['email'],
-                age=data['age'],
-                skills=", ".join(data.get('skills', [])),
-                career_interests=data['careerInterests'],
-                password=hashed_password,
-                course="Undecided",
-                university_id="NONE",
-                faculty="Undecided",
-                duration=0
-            )
+        # Check if user already exists
+        existing_user = User.query.filter_by(email=data['email']).first()
+        if existing_user:
+            logger.error("User already exists")
+            return jsonify({"error": "User already exists"}), 409
 
-            db.session.add(new_user)
-            db.session.commit()
-            
-            # Generate token
-            token = jwt.encode({
+        # Hash password
+        hashed_password = bcrypt.hashpw(data['password'].encode('utf-8'), bcrypt.gensalt())
+
+        # Create new user
+        new_user = User(
+            first_name=data['firstName'],
+            last_name=data['lastName'],
+            email=data['email'],
+            password=hashed_password,
+            age=data['age'],
+            career_interests=data['careerInterests'],
+            skills=data.get('skills', [])
+        )
+
+        # Add user to database
+        db.session.add(new_user)
+        db.session.commit()
+        logger.info(f"New user created: {new_user.email}")
+
+        # Generate token
+        token = jwt.encode(
+            {
                 'user_id': new_user.id,
-                'exp': datetime.utcnow() + app.config['JWT_ACCESS_TOKEN_EXPIRES']
-            }, app.config['JWT_SECRET_KEY'])
+                'exp': datetime.utcnow() + timedelta(days=1)
+            },
+            app.config['JWT_SECRET_KEY'],
+            algorithm='HS256'
+        )
 
-            return jsonify({
-                "message": "User signed up successfully",
-                "user_id": new_user.id,
-                "token": token,
-                "user": {
-                    "id": new_user.id,
-                    "firstName": new_user.first_name,
-                    "lastName": new_user.last_name,
-                    "email": new_user.email,
-                    "skills": data.get('skills', []),
-                    "careerInterests": new_user.career_interests
-                }
-            })
-
-        except Exception as e:
-            db.session.rollback()
-            logger.error(f"Database error during user creation: {str(e)}")
-            logger.error(traceback.format_exc())
-            return jsonify({"error": f"Database error: {str(e)}"}), 500
+        # Return user data and token
+        response = jsonify({
+            "message": "User created successfully",
+            "user": {
+                "id": new_user.id,
+                "firstName": new_user.first_name,
+                "lastName": new_user.last_name,
+                "email": new_user.email,
+                "age": new_user.age,
+                "careerInterests": new_user.career_interests,
+                "skills": new_user.skills
+            },
+            "token": token
+        })
+        
+        # Add CORS headers to the response
+        response.headers.add('Access-Control-Allow-Origin', request.headers.get('Origin', 'http://localhost:3000'))
+        response.headers.add('Access-Control-Allow-Credentials', 'true')
+        return response, 201
 
     except Exception as e:
-        logger.error(f"Unexpected error in signup: {str(e)}")
+        logger.error(f"Error in signup: {str(e)}")
         logger.error(traceback.format_exc())
-        return jsonify({"error": "An unexpected error occurred"}), 500
+        db.session.rollback()
+        error_response = jsonify({"error": "Failed to create user"})
+        error_response.headers.add('Access-Control-Allow-Origin', request.headers.get('Origin', 'http://localhost:3000'))
+        error_response.headers.add('Access-Control-Allow-Credentials', 'true')
+        return error_response, 500
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST', 'OPTIONS'])
 def login():
+    if request.method == 'OPTIONS':
+        # Handle preflight request with proper CORS headers
+        response = jsonify({"message": "Preflight request successful"})
+        response.headers.add('Access-Control-Allow-Origin', request.headers.get('Origin', 'http://localhost:3000'))
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+        response.headers.add('Access-Control-Allow-Methods', 'POST, OPTIONS')
+        response.headers.add('Access-Control-Allow-Credentials', 'true')
+        response.headers.add('Access-Control-Max-Age', '3600')  # Cache preflight response for 1 hour
+        return response, 200
+        
     try:
         data = request.json
         email = data.get('email')
@@ -289,23 +304,35 @@ def login():
                 'user_id': user.id,
                 'exp': datetime.utcnow() + app.config['JWT_ACCESS_TOKEN_EXPIRES']
             }, app.config['JWT_SECRET_KEY'])
-            
-            return jsonify({
-                "message": "Login successful",
-                "user_id": user.id,
-                "token": token,
-                "user": {
-                    "firstName": user.first_name,
-                    "lastName": user.last_name,
-                    "email": user.email,
-                    "skills": user.skills.split(", ") if user.skills else [],
-                    "careerInterests": user.career_interests
+
+            response = jsonify({
+                'token': token,
+                'user': {
+                    'id': user.id,
+                    'firstName': user.first_name,
+                    'lastName': user.last_name,
+                    'email': user.email,
+                    'age': user.age,
+                    'careerInterests': user.career_interests,
+                    'skills': user.skills
                 }
             })
-        return jsonify({"error": "Invalid email or password"}), 401
+            
+            # Add CORS headers to the response
+            response.headers.add('Access-Control-Allow-Origin', request.headers.get('Origin', 'http://localhost:3000'))
+            response.headers.add('Access-Control-Allow-Credentials', 'true')
+            return response, 200
+        else:
+            error_response = jsonify({'error': 'Invalid email or password'})
+            error_response.headers.add('Access-Control-Allow-Origin', request.headers.get('Origin', 'http://localhost:3000'))
+            error_response.headers.add('Access-Control-Allow-Credentials', 'true')
+            return error_response, 401
     except Exception as e:
         logger.error(f"Login error: {str(e)}")
-        return jsonify({"error": "Login failed"}), 500
+        error_response = jsonify({'error': 'Login failed'})
+        error_response.headers.add('Access-Control-Allow-Origin', request.headers.get('Origin', 'http://localhost:3000'))
+        error_response.headers.add('Access-Control-Allow-Credentials', 'true')
+        return error_response, 500
 
 # Protected routes
 @app.route('/user/profile', methods=['GET'])
@@ -797,14 +824,27 @@ def internal_error(error):
     db.session.rollback()
     return jsonify({"error": "Internal server error"}), 500
 
-# Add CORS headers to all responses
-@app.after_request
-def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-    response.headers.add('Access-Control-Allow-Credentials', 'true')
-    return response
-
 if __name__ == "__main__":
+    with app.app_context():
+        try:
+            # Initialize database tables
+            db.create_all()
+
+            # Load reference profiles
+            if ReferenceProfile.query.count() == 0:
+                init_data.init_reference_profiles(app)
+
+            # Load universities
+            if University.query.count() == 0:
+                init_data.init_universities(app)
+
+            # Load courses
+            if Course.query.count() == 0:
+                init_data.init_courses(app)
+
+            logger.info("Application initialized successfully")
+        except Exception as e:
+            logger.error(f"Error during initialization: {str(e)}")
+
+    # Start the app
     app.run(debug=True)

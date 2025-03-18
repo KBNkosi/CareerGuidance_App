@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { api } from '../utils/api';
 
 const AuthContext = createContext(null);
@@ -8,31 +8,35 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  useEffect(() => {
+  // Fetch user profile function
+  const fetchUserProfile = useCallback(async () => {
     const token = localStorage.getItem('token');
-    if (token) {
-      // Fetch current user profile
-      api.get('/user/profile')
-        .then(response => {
-          setUser(response.data.user);
-          setIsAuthenticated(true);
-          localStorage.setItem('user', JSON.stringify(response.data.user));
-        })
-        .catch(() => {
-          // If token is invalid, clear storage
-          localStorage.removeItem('token');
-          localStorage.removeItem('user');
-          localStorage.removeItem('userId');
-          setIsAuthenticated(false);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    } else {
+    if (!token) {
       setLoading(false);
       setIsAuthenticated(false);
+      return;
+    }
+    
+    try {
+      // Fetch current user profile
+      const response = await api.get('/user/profile');
+      setUser(response.data.user);
+      setIsAuthenticated(true);
+      localStorage.setItem('user', JSON.stringify(response.data.user));
+    } catch (error) {
+      // If token is invalid, clear storage
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      localStorage.removeItem('userId');
+      setIsAuthenticated(false);
+    } finally {
+      setLoading(false);
     }
   }, []);
+
+  useEffect(() => {
+    fetchUserProfile();
+  }, [fetchUserProfile]);
 
   const login = async (user, token) => {
     try {
@@ -40,6 +44,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('userId', user.id);
         setUser(user);
         setIsAuthenticated(true);
+        return user;
     } catch (error) {
         console.error('Login error:', error);
         throw error;
@@ -60,7 +65,8 @@ export const AuthProvider = ({ children }) => {
       loading, 
       login, 
       logout, 
-      isAuthenticated
+      isAuthenticated,
+      refreshUser: fetchUserProfile
     }}>
       {children}
     </AuthContext.Provider>
@@ -74,4 +80,3 @@ export const useAuth = () => {
   }
   return context;
 };
-    

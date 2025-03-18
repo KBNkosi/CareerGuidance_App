@@ -6756,3 +6756,677 @@ FROM courses) AS anon_1
 2025-01-15 11:11:33,373 - werkzeug - INFO -  * Debugger PIN: 969-508-500
 2025-01-15 11:11:45,841 - werkzeug - INFO - 127.0.0.1 - - [15/Jan/2025 11:11:45] "GET / HTTP/1.1" 200 -
 2025-01-15 11:14:30,835 - werkzeug - INFO - 127.0.0.1 - - [15/Jan/2025 11:14:30] "[33mOPTIONS /signup HTTP/1.1[0m" 404 -
+2025-03-14 11:02:11,308 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 11:02:11,352 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 11:02:11,353 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:11,385 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 11:02:11,386 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:11,388 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 11:02:11,389 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:11,391 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 11:02:11,392 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:11,395 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 11:02:11,396 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:11,400 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 11:02:11,401 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:11,402 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 11:02:11,403 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:11,405 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 11:02:11,405 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:11,408 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 11:02:11,531 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 11:02:11,621 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 11:02:11,622 - sqlalchemy.engine.Engine - INFO - [generated in 0.00106s] ()
+2025-03-14 11:02:11,648 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 11:02:11,649 - sqlalchemy.engine.Engine - INFO - [generated in 0.01419s] ()
+2025-03-14 11:02:11,670 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 11:02:11,671 - sqlalchemy.engine.Engine - INFO - [generated in 0.00134s] ()
+2025-03-14 11:02:11,943 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 11:02:11,944 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 11:02:11,946 - __main__ - INFO - Application initialized successfully
+2025-03-14 11:02:12,422 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-14 11:02:12,422 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-14 11:02:12,438 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 11:02:38,687 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 11:02:38,689 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 11:02:38,690 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:38,694 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 11:02:38,695 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:38,696 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 11:02:38,696 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:38,697 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 11:02:38,698 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:38,700 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 11:02:38,700 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:38,704 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 11:02:38,705 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:38,708 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 11:02:38,709 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:38,712 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 11:02:38,713 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 11:02:38,716 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 11:02:38,762 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 11:02:38,792 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 11:02:38,793 - sqlalchemy.engine.Engine - INFO - [generated in 0.00113s] ()
+2025-03-14 11:02:38,808 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 11:02:38,810 - sqlalchemy.engine.Engine - INFO - [generated in 0.00136s] ()
+2025-03-14 11:02:38,827 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 11:02:38,829 - sqlalchemy.engine.Engine - INFO - [generated in 0.00125s] ()
+2025-03-14 11:02:38,879 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 11:02:38,880 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 11:02:38,882 - __main__ - INFO - Application initialized successfully
+2025-03-14 11:02:38,993 - werkzeug - WARNING -  * Debugger is active!
+2025-03-14 11:02:39,043 - werkzeug - INFO -  * Debugger PIN: 504-878-028
+2025-03-14 11:02:39,312 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 11:02:39] "GET / HTTP/1.1" 200 -
+2025-03-14 12:41:52,120 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 12:41:52,162 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 12:41:52,163 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:41:52,195 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 12:41:52,196 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:41:52,198 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 12:41:52,199 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:41:52,200 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 12:41:52,202 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:41:52,204 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 12:41:52,204 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:41:52,206 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 12:41:52,207 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:41:52,209 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 12:41:52,209 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:41:52,211 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 12:41:52,212 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:41:52,214 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 12:41:52,284 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 12:41:52,350 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 12:41:52,350 - sqlalchemy.engine.Engine - INFO - [generated in 0.00125s] ()
+2025-03-14 12:41:52,415 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 12:41:52,415 - sqlalchemy.engine.Engine - INFO - [generated in 0.00173s] ()
+2025-03-14 12:41:52,431 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 12:41:52,431 - sqlalchemy.engine.Engine - INFO - [generated in 0.00165s] ()
+2025-03-14 12:41:52,837 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 12:41:52,838 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 12:41:52,840 - __main__ - INFO - Application initialized successfully
+2025-03-14 12:41:53,252 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-14 12:41:53,253 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-14 12:41:53,274 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 12:42:01,647 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 12:42:01,648 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 12:42:01,649 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:42:01,652 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 12:42:01,653 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:42:01,654 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 12:42:01,654 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:42:01,656 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 12:42:01,656 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:42:01,657 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 12:42:01,657 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:42:01,659 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 12:42:01,659 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:42:01,660 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 12:42:01,661 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:42:01,662 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 12:42:01,663 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:42:01,664 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 12:42:01,697 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 12:42:01,714 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 12:42:01,715 - sqlalchemy.engine.Engine - INFO - [generated in 0.00083s] ()
+2025-03-14 12:42:01,725 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 12:42:01,726 - sqlalchemy.engine.Engine - INFO - [generated in 0.00072s] ()
+2025-03-14 12:42:01,735 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 12:42:01,735 - sqlalchemy.engine.Engine - INFO - [generated in 0.00069s] ()
+2025-03-14 12:42:01,752 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 12:42:01,752 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 12:42:01,753 - __main__ - INFO - Application initialized successfully
+2025-03-14 12:42:01,774 - werkzeug - WARNING -  * Debugger is active!
+2025-03-14 12:42:01,819 - werkzeug - INFO -  * Debugger PIN: 504-878-028
+2025-03-14 12:48:02,526 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 12:48:02] "[33mOPTIONS /signup HTTP/1.1[0m" 404 -
+2025-03-14 12:54:47,531 - werkzeug - INFO -  * Detected change in 'C:\\VS CODE\\VSCODE\\Projects\\IT_Project700-main\\CareerGuidance_App\\app.py', reloading
+2025-03-14 12:54:49,944 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 12:55:26,382 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 12:55:26,383 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 12:55:26,386 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:55:26,390 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 12:55:26,390 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:55:26,392 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 12:55:26,393 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:55:26,395 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 12:55:26,396 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:55:26,397 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 12:55:26,398 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:55:26,399 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 12:55:26,401 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:55:26,403 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 12:55:26,404 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:55:26,405 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 12:55:26,406 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:55:26,408 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 12:55:26,441 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 12:55:26,459 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 12:55:26,461 - sqlalchemy.engine.Engine - INFO - [generated in 0.00104s] ()
+2025-03-14 12:55:26,475 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 12:55:26,476 - sqlalchemy.engine.Engine - INFO - [generated in 0.00088s] ()
+2025-03-14 12:55:26,487 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 12:55:26,488 - sqlalchemy.engine.Engine - INFO - [generated in 0.00072s] ()
+2025-03-14 12:55:26,513 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 12:55:26,514 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 12:55:26,515 - __main__ - INFO - Application initialized successfully
+2025-03-14 12:55:26,660 - werkzeug - WARNING -  * Debugger is active!
+2025-03-14 12:55:26,724 - werkzeug - INFO -  * Debugger PIN: 504-878-028
+2025-03-14 12:56:53,575 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 12:56:53,580 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 12:56:53,580 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:56:53,583 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 12:56:53,584 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:56:53,585 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 12:56:53,586 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:56:53,586 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 12:56:53,587 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:56:53,588 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 12:56:53,589 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:56:53,590 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 12:56:53,591 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:56:53,593 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 12:56:53,593 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:56:53,595 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 12:56:53,596 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:56:53,597 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 12:56:53,609 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 12:56:53,634 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 12:56:53,647 - sqlalchemy.engine.Engine - INFO - [generated in 0.00189s] ()
+2025-03-14 12:56:53,660 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 12:56:53,666 - sqlalchemy.engine.Engine - INFO - [generated in 0.00123s] ()
+2025-03-14 12:56:53,675 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 12:56:53,681 - sqlalchemy.engine.Engine - INFO - [generated in 0.00085s] ()
+2025-03-14 12:56:53,712 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 12:56:53,716 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 12:56:53,717 - __main__ - INFO - Application initialized successfully
+2025-03-14 12:56:53,809 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-14 12:56:53,809 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-14 12:56:53,827 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 12:57:00,873 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 12:57:00,874 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 12:57:00,874 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:57:00,877 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 12:57:00,878 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:57:00,879 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 12:57:00,879 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:57:00,880 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 12:57:00,881 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:57:00,882 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 12:57:00,883 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:57:00,884 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 12:57:00,885 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:57:00,886 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 12:57:00,886 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:57:00,887 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 12:57:00,888 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 12:57:00,889 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 12:57:00,918 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 12:57:00,935 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 12:57:00,936 - sqlalchemy.engine.Engine - INFO - [generated in 0.00104s] ()
+2025-03-14 12:57:00,944 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 12:57:00,944 - sqlalchemy.engine.Engine - INFO - [generated in 0.00098s] ()
+2025-03-14 12:57:00,952 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 12:57:00,952 - sqlalchemy.engine.Engine - INFO - [generated in 0.00065s] ()
+2025-03-14 12:57:00,965 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 12:57:00,966 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 12:57:00,971 - __main__ - INFO - Application initialized successfully
+2025-03-14 12:57:00,989 - werkzeug - WARNING -  * Debugger is active!
+2025-03-14 12:57:01,002 - werkzeug - INFO -  * Debugger PIN: 504-878-028
+2025-03-14 12:59:11,174 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 12:59:11] "[33mOPTIONS /signup HTTP/1.1[0m" 404 -
+2025-03-14 13:03:27,556 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:03:27,557 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 13:03:27,558 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:27,562 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 13:03:27,562 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:27,564 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 13:03:27,565 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:27,566 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 13:03:27,567 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:27,569 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 13:03:27,569 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:27,571 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 13:03:27,572 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:27,573 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 13:03:27,573 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:27,575 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 13:03:27,575 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:27,577 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 13:03:27,607 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:03:27,619 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 13:03:27,622 - sqlalchemy.engine.Engine - INFO - [generated in 0.00073s] ()
+2025-03-14 13:03:27,625 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 13:03:27,634 - sqlalchemy.engine.Engine - INFO - [generated in 0.00079s] ()
+2025-03-14 13:03:27,637 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 13:03:27,645 - sqlalchemy.engine.Engine - INFO - [generated in 0.00081s] ()
+2025-03-14 13:03:27,647 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 13:03:27,656 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 13:03:27,657 - __main__ - INFO - Application initialized successfully
+2025-03-14 13:03:27,705 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-14 13:03:27,709 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-14 13:03:27,713 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 13:03:32,443 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:03:32,444 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 13:03:32,445 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:32,447 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 13:03:32,447 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:32,448 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 13:03:32,448 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:32,449 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 13:03:32,449 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:32,449 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 13:03:32,450 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:32,450 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 13:03:32,450 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:32,451 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 13:03:32,451 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:32,451 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 13:03:32,452 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:03:32,452 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 13:03:32,464 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:03:32,470 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 13:03:32,471 - sqlalchemy.engine.Engine - INFO - [generated in 0.00044s] ()
+2025-03-14 13:03:32,477 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 13:03:32,478 - sqlalchemy.engine.Engine - INFO - [generated in 0.00060s] ()
+2025-03-14 13:03:32,484 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 13:03:32,485 - sqlalchemy.engine.Engine - INFO - [generated in 0.00059s] ()
+2025-03-14 13:03:32,490 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 13:03:32,493 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 13:03:32,494 - __main__ - INFO - Application initialized successfully
+2025-03-14 13:03:32,504 - werkzeug - WARNING -  * Debugger is active!
+2025-03-14 13:03:32,509 - werkzeug - INFO -  * Debugger PIN: 504-878-028
+2025-03-14 13:04:42,909 - werkzeug - INFO -  * Detected change in 'C:\\VS CODE\\VSCODE\\Projects\\IT_Project700-main\\CareerGuidance_App\\app.py', reloading
+2025-03-14 13:04:43,174 - werkzeug - INFO -  * Detected change in 'C:\\VS CODE\\VSCODE\\Projects\\IT_Project700-main\\CareerGuidance_App\\app.py', reloading
+2025-03-14 13:04:43,771 - werkzeug - INFO -  * Detected change in 'C:\\VS CODE\\VSCODE\\Projects\\IT_Project700-main\\CareerGuidance_App\\app.py', reloading
+2025-03-14 13:04:44,355 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 13:04:44,656 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 13:04:49,565 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:04:49,567 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 13:04:49,567 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,569 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 13:04:49,569 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,570 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 13:04:49,571 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,571 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 13:04:49,572 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,573 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 13:04:49,573 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,574 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 13:04:49,574 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,575 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 13:04:49,575 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,576 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 13:04:49,576 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,577 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 13:04:49,589 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:04:49,600 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 13:04:49,601 - sqlalchemy.engine.Engine - INFO - [generated in 0.00054s] ()
+2025-03-14 13:04:49,608 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 13:04:49,609 - sqlalchemy.engine.Engine - INFO - [generated in 0.00040s] ()
+2025-03-14 13:04:49,612 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 13:04:49,613 - sqlalchemy.engine.Engine - INFO - [generated in 0.00039s] ()
+2025-03-14 13:04:49,618 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 13:04:49,619 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 13:04:49,620 - __main__ - INFO - Application initialized successfully
+2025-03-14 13:04:49,621 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:04:49,621 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 13:04:49,622 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,623 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 13:04:49,624 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,625 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 13:04:49,625 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,626 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 13:04:49,626 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,627 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 13:04:49,628 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,628 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 13:04:49,628 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,628 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 13:04:49,628 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,628 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 13:04:49,628 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:04:49,628 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 13:04:49,628 - werkzeug - WARNING -  * Debugger is active!
+2025-03-14 13:04:49,646 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:04:49,649 - werkzeug - INFO -  * Debugger PIN: 504-878-028
+2025-03-14 13:04:49,653 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 13:04:49,653 - sqlalchemy.engine.Engine - INFO - [generated in 0.00051s] ()
+2025-03-14 13:04:49,658 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 13:04:49,658 - sqlalchemy.engine.Engine - INFO - [generated in 0.00042s] ()
+2025-03-14 13:04:49,664 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 13:04:49,664 - sqlalchemy.engine.Engine - INFO - [generated in 0.00040s] ()
+2025-03-14 13:04:49,669 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 13:04:49,669 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 13:04:49,670 - __main__ - INFO - Application initialized successfully
+2025-03-14 13:04:49,683 - werkzeug - WARNING -  * Debugger is active!
+2025-03-14 13:04:49,685 - werkzeug - INFO -  * Debugger PIN: 504-878-028
+2025-03-14 13:05:56,292 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:05:56,303 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 13:05:56,304 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:05:56,306 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 13:05:56,306 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:05:56,309 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 13:05:56,310 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:05:56,311 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 13:05:56,312 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:05:56,313 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 13:05:56,314 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:05:56,315 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 13:05:56,316 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:05:56,317 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 13:05:56,318 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:05:56,319 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 13:05:56,319 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:05:56,321 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 13:05:56,340 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:05:56,360 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 13:05:56,366 - sqlalchemy.engine.Engine - INFO - [generated in 0.00085s] ()
+2025-03-14 13:05:56,374 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 13:05:56,378 - sqlalchemy.engine.Engine - INFO - [generated in 0.00087s] ()
+2025-03-14 13:05:56,395 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 13:05:56,398 - sqlalchemy.engine.Engine - INFO - [generated in 0.00083s] ()
+2025-03-14 13:05:56,400 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 13:05:56,400 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 13:05:56,409 - __main__ - INFO - Application initialized successfully
+2025-03-14 13:05:56,455 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-14 13:05:56,455 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-14 13:05:56,458 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 13:06:01,227 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:06:01,228 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 13:06:01,228 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:01,230 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 13:06:01,231 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:01,232 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 13:06:01,232 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:01,233 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 13:06:01,233 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:01,234 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 13:06:01,234 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:01,235 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 13:06:01,235 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:01,236 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 13:06:01,236 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:01,237 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 13:06:01,237 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:01,239 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 13:06:01,253 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:06:01,260 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 13:06:01,261 - sqlalchemy.engine.Engine - INFO - [generated in 0.00042s] ()
+2025-03-14 13:06:01,268 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 13:06:01,268 - sqlalchemy.engine.Engine - INFO - [generated in 0.00051s] ()
+2025-03-14 13:06:01,272 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 13:06:01,274 - sqlalchemy.engine.Engine - INFO - [generated in 0.00058s] ()
+2025-03-14 13:06:01,282 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 13:06:01,282 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 13:06:01,282 - __main__ - INFO - Application initialized successfully
+2025-03-14 13:06:01,297 - werkzeug - WARNING -  * Debugger is active!
+2025-03-14 13:06:01,307 - werkzeug - INFO -  * Debugger PIN: 504-878-028
+2025-03-14 13:06:51,472 - werkzeug - INFO -  * Detected change in 'C:\\VS CODE\\VSCODE\\Projects\\IT_Project700-main\\CareerGuidance_App\\app.py', reloading
+2025-03-14 13:06:51,528 - werkzeug - INFO -  * Detected change in 'C:\\VS CODE\\VSCODE\\Projects\\IT_Project700-main\\CareerGuidance_App\\app.py', reloading
+2025-03-14 13:06:51,632 - werkzeug - INFO -  * Detected change in 'C:\\VS CODE\\VSCODE\\Projects\\IT_Project700-main\\CareerGuidance_App\\app.py', reloading
+2025-03-14 13:06:52,350 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 13:06:52,442 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 13:06:52,532 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 13:06:57,747 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:06:57,747 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 13:06:57,747 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,749 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 13:06:57,749 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,749 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 13:06:57,750 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,750 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 13:06:57,750 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,751 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 13:06:57,751 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,751 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 13:06:57,752 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,752 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 13:06:57,752 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,753 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 13:06:57,753 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,754 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 13:06:57,763 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:06:57,770 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 13:06:57,770 - sqlalchemy.engine.Engine - INFO - [generated in 0.00054s] ()
+2025-03-14 13:06:57,777 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 13:06:57,778 - sqlalchemy.engine.Engine - INFO - [generated in 0.00060s] ()
+2025-03-14 13:06:57,783 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 13:06:57,784 - sqlalchemy.engine.Engine - INFO - [generated in 0.00057s] ()
+2025-03-14 13:06:57,791 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 13:06:57,792 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 13:06:57,792 - __main__ - INFO - Application initialized successfully
+2025-03-14 13:06:57,827 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:06:57,827 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 13:06:57,827 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,828 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 13:06:57,829 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,829 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 13:06:57,830 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,830 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 13:06:57,830 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,831 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 13:06:57,831 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,831 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 13:06:57,832 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,832 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 13:06:57,832 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,833 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 13:06:57,833 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,834 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 13:06:57,853 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:06:57,856 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:06:57,857 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-14 13:06:57,857 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,858 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-14 13:06:57,859 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,859 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-14 13:06:57,859 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,860 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-14 13:06:57,860 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,861 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-14 13:06:57,861 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,861 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-14 13:06:57,861 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,862 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-14 13:06:57,862 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,863 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-14 13:06:57,863 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-14 13:06:57,863 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 13:06:57,863 - sqlalchemy.engine.Engine - INFO - [generated in 0.00063s] ()
+2025-03-14 13:06:57,863 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-14 13:06:57,871 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 13:06:57,871 - sqlalchemy.engine.Engine - INFO - [generated in 0.00051s] ()
+2025-03-14 13:06:57,874 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-14 13:06:57,877 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 13:06:57,877 - sqlalchemy.engine.Engine - INFO - [generated in 0.00052s] ()
+2025-03-14 13:06:57,880 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-14 13:06:57,881 - sqlalchemy.engine.Engine - INFO - [generated in 0.00053s] ()
+2025-03-14 13:06:57,884 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 13:06:57,884 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 13:06:57,885 - __main__ - INFO - Application initialized successfully
+2025-03-14 13:06:57,886 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-14 13:06:57,887 - sqlalchemy.engine.Engine - INFO - [generated in 0.00037s] ()
+2025-03-14 13:06:57,892 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-14 13:06:57,892 - sqlalchemy.engine.Engine - INFO - [generated in 0.00053s] ()
+2025-03-14 13:06:57,899 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-14 13:06:57,900 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-14 13:06:57,900 - __main__ - INFO - Application initialized successfully
+2025-03-17 19:40:13,366 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-17 19:40:13,387 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-17 19:40:13,388 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:13,428 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-17 19:40:13,429 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:13,431 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-17 19:40:13,432 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:13,434 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-17 19:40:13,434 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:13,436 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-17 19:40:13,437 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:13,439 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-17 19:40:13,439 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:13,441 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-17 19:40:13,442 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:13,444 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-17 19:40:13,445 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:13,448 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-17 19:40:13,517 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-17 19:40:13,592 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-17 19:40:13,593 - sqlalchemy.engine.Engine - INFO - [generated in 0.00103s] ()
+2025-03-17 19:40:13,603 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-17 19:40:13,604 - sqlalchemy.engine.Engine - INFO - [generated in 0.00094s] ()
+2025-03-17 19:40:13,618 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-17 19:40:13,620 - sqlalchemy.engine.Engine - INFO - [generated in 0.00131s] ()
+2025-03-17 19:40:13,922 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-17 19:40:13,922 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-17 19:40:13,924 - __main__ - INFO - Application initialized successfully
+2025-03-17 19:40:14,376 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 19:40:14,377 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 19:40:14,424 - werkzeug - INFO -  * Restarting with stat
+2025-03-17 19:40:22,922 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-17 19:40:22,923 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2025-03-17 19:40:22,924 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:22,928 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("universities")
+2025-03-17 19:40:22,929 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:22,931 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("careers")
+2025-03-17 19:40:22,932 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:22,934 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("courses")
+2025-03-17 19:40:22,936 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:22,938 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("mentorships")
+2025-03-17 19:40:22,939 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:22,941 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cv_templates")
+2025-03-17 19:40:22,942 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:22,944 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("reference_profiles")
+2025-03-17 19:40:22,945 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:22,947 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("behavioral_assessments")
+2025-03-17 19:40:22,947 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2025-03-17 19:40:22,950 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-03-17 19:40:22,987 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-03-17 19:40:23,011 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT reference_profiles.id AS reference_profiles_id, reference_profiles.name AS reference_profiles_name, reference_profiles.description AS reference_profiles_description, reference_profiles.dominance AS reference_profiles_dominance, reference_profiles.extraversion AS reference_profiles_extraversion, reference_profiles.patience AS reference_profiles_patience, reference_profiles.formality AS reference_profiles_formality 
+FROM reference_profiles) AS anon_1
+2025-03-17 19:40:23,012 - sqlalchemy.engine.Engine - INFO - [generated in 0.00122s] ()
+2025-03-17 19:40:23,028 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT universities.id AS universities_id, universities.name AS universities_name, universities.tel_number AS universities_tel_number, universities.website AS universities_website 
+FROM universities) AS anon_1
+2025-03-17 19:40:23,029 - sqlalchemy.engine.Engine - INFO - [generated in 0.00113s] ()
+2025-03-17 19:40:23,043 - sqlalchemy.engine.Engine - INFO - SELECT count(*) AS count_1 
+FROM (SELECT courses.id AS courses_id, courses.name AS courses_name, courses.credits AS courses_credits, courses.university_id AS courses_university_id, courses.faculty AS courses_faculty, courses.duration AS courses_duration, courses.recommended_career AS courses_recommended_career, courses.key_skills AS courses_key_skills 
+FROM courses) AS anon_1
+2025-03-17 19:40:23,044 - sqlalchemy.engine.Engine - INFO - [generated in 0.00110s] ()
+2025-03-17 19:40:23,062 - init_data - ERROR - Error initializing courses: 'Key Skills'
+2025-03-17 19:40:23,063 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-03-17 19:40:23,064 - __main__ - INFO - Application initialized successfully
+2025-03-17 19:40:23,098 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 19:40:23,208 - werkzeug - INFO -  * Debugger PIN: 504-878-028
+2025-03-17 19:45:46,891 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 19:45:46] "[33mOPTIONS /signup HTTP/1.1[0m" 404 -
+2025-03-17 19:45:49,075 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 19:45:49] "[33mPOST /signup HTTP/1.1[0m" 404 -
+2025-03-17 19:48:18,374 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 19:48:18] "[33mOPTIONS /signup HTTP/1.1[0m" 404 -
+2025-03-17 19:49:19,489 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 19:49:19] "[33mOPTIONS /signup HTTP/1.1[0m" 404 -

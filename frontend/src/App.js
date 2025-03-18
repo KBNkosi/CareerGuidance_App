@@ -23,7 +23,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/login" element={!isAuthenticated ? <Login setAuth={setIsAuthenticated} /> : <Navigate to="/dashboard" />} />
-                <Route path="/signup" element={!isAuthenticated ? <SignUp setAuth={setIsAuthenticated} /> : <Navigate to="/assessment" />} />
+                <Route path="/signup" element={!isAuthenticated ? <SignUp setAuth={setIsAuthenticated} /> : <Navigate to="/dashboard" />} />
                 
                 <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
                 <Route element={<Layout />}>
