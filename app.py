@@ -37,7 +37,7 @@ CORS(app,
             "origins": [
                 "http://localhost:3000",
                 "http://127.0.0.1:3000",
-                "https://career-guidance-app.netlify.app"
+                "https://career-recommendation.netlify.app/"
             ],
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
             "allow_headers": ["Content-Type", "Authorization"],
