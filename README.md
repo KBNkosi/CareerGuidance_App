@@ -1,14 +1,37 @@
-# Career Guidance Application
+## Career Guidance Application
 
-A comprehensive career guidance platform that provides personalized career recommendations based on behavioral assessments, skills analysis, and educational background. This is a final year university team collaboration project.
+A career guidance platform designed to provide **personalized career recommendations** based on user behavior, personality traits, and educational data.
+
+This project was developed as a final year university capstone, focusing on combining **user research, structured data, and recommendation logic** to support informed career decision-making.
+
+## 👤 My Contribution
+
+In this team-based capstone project, I focused on **data, user research, and recommendation logic**, contributing to the core functionality of the platform.
+
+### 📊 Data Collection & Structuring
+- Collected and curated datasets of **universities and academic courses**
+- Structured data to support accurate and relevant career recommendations
+- Ensured data quality and usability within the system
+
+### 🧠 User Research & Survey Design
+- Designed a **user survey** to better understand:
+  - Student needs and decision-making challenges
+  - Expectations from a career guidance platform
+- Used survey insights to help shape application features and improve recommendation relevance
+
+### 🧩 Personality & Recommendation Logic
+- Contributed to the logic for determining **user personality profiles**
+- Supported the alignment of personality traits with career recommendations (DISC-based approach)
+
+These contributions directly supported the platform’s ability to generate **meaningful and personalized career guidance**.
 
 ## 🚀 Features
 
-- **Behavioral Assessment System**: DISC-based personality assessment for career matching
-- **Personalized Recommendations**: ML-powered career suggestions based on user profiles
-- **Educational Pathways**: Course and university recommendations
-- **User Management**: Secure authentication and profile management
-- **Interactive Dashboard**: Modern React-based frontend with data visualization
+- Behavioral assessment system based on DISC personality profiling
+- Career recommendations driven by user data, personality traits, and structured datasets
+- University and course suggestions aligned with career paths
+- User authentication and profile management
+- Interactive dashboard with data visualization
 
 ## 🏗️ Architecture
 
@@ -211,6 +234,13 @@ This project was developed as a final year university project with the following
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+## ⚠️ Project Status
+
+This project was developed as part of a university capstone and is not actively maintained.
+
+While some parts of the codebase may not reflect my current skill level, the project demonstrates my experience working on a **larger, collaborative system** involving data, user research, and application logic.
+
 
 ## 📄 License
 
